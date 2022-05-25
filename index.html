@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>joguinho</title>
+    <style>
+        body{
+            background: gray;
+            text-align: center;
+            color: white;
+        }
+        input{
+            border: 1px solid white;
+            background: white;
+            padding-left: 5px;
+            font-family: Impact;
+            color: black;
+        }
+        input:hover{
+            box-shadow: 0 0 50px black;
+        }
+        #res{
+            height: 50px;
+            padding-bottom: 30px;
+            background: dodgerblue;
+            border: 3px solid white;
+            
+        }
+    </style>
+</head>
+<body>
+<h1 id="oii">Acerte o numero</h1>
+<div id="res"><h1 id="resultado">resultado</h1></div>
+<input type="text" id="insert" placeholder="um numero de 0 a 100">
+<input type="submit" id="jogo" onclick="jogo()" value="jogar"/>
+<input type="button" value="reset" onClick="window.location.reload()">
+</body>
+<script>
+    var entrada=Math.floor(Math.random()*100);
+    console.log(entrada);
+    function jogo(){
+    var chute=undefined;
+    while (chute != entrada){
+        chute=document.getElementById('insert').value;
+        if (chute==entrada)
+            document.getElementById('resultado').innerHTML='acertou 😀';
+        if (chute < entrada)
+            document.getElementById('resultado').innerHTML='mais 😀';
+        if (chute > entrada)
+            document.getElementById('resultado').innerHTML='menos 😀';
+        break;
+    }}
+</script>
+</html>
